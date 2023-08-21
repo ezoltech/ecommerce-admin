@@ -13,7 +13,7 @@ datasource db {
 
 
 model Store {
-  id        String    @id @map("_id") 
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String
   userId    String
   createdAt DateTime  @default(now())
