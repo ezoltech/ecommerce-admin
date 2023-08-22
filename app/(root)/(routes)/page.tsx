@@ -13,10 +13,7 @@ const  Home = () =>  {
   }, [isOpen, onOpen]);
   
   return (
-    <div className="p-4">
-       This is a Root Page
-     
-    </div>
+   null 
   )
 }
 
