@@ -2,7 +2,6 @@
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { useStoreModal } from "@/hooks/use-store-modal";
 import { Store } from "@prisma/client"
-
 import { useParams, useRouter } from "next/navigation";
 import React, { useState } from "react"
 import { Button } from "@/components/ui/button";
@@ -51,7 +50,7 @@ export default function StoreSwitcher({
              className={cn("w-[200px] justify-between", className)}
             >
                 <StoreIcon className="mr-2 h-4 w-4"/>
-                Current Store 
+                  Current Store 
                 <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50"/>
             </Button>
         </PopoverTrigger>
