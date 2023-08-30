@@ -46,20 +46,20 @@ export const StoreModal = () => {
        <div className="space-y-4 py-2 pb-4">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
-                <FormField 
-                control={form.control}
-                name="name"
-                render={({field}) => (
-                    <FormItem>
-                        <FormLabel>Name</FormLabel>
-                        <FormControl>
-                            <Input disabled={loading} placeholder='E-commerce ' {...field}/>
-                        </FormControl>
-                        <FormMessage />
-                    </FormItem>
-                )}
-                >
-                </FormField>
+            <FormField
+            control={form.control}
+            name="name"
+            render={({field}) => (
+      <FormItem>
+         <FormLabel>Name</FormLabel>
+         <FormControl>
+            <Input disabled={loading} placeholder='E-commerce ' {...field}/>
+         </FormControl>
+         <FormMessage />
+      </FormItem>
+   )}
+/>
+
                 <div className="pt-6 space-x-2 flex items-center justify-end">
                         <Button disabled={loading} variant="outline" onClick={StoreModal.onClose}>Cancel</Button>
                         <Button  disabled={loading} type='submit'>Continue</Button>

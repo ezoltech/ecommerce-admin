@@ -11,11 +11,23 @@ datasource db {
   relationMode = "prisma"
 }
 
-
 model Store {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  name      String
-  userId    String
-  createdAt DateTime  @default(now())
-  updatedAt DateTime?
+  name       String
+  userId     String
+  billboards Billboard[] @relation("StoreToBillboard")
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime?
+}
+
+model Billboard {
+   id         String   @id @default(auto()) @map("_id") @db.ObjectId
+   storeId    String   @db.ObjectId  // Add @db.ObjectId here
+   store      Store    @relation("StoreToBillboard", fields: [storeId], references: [id])
+   label      String
+   imageUrl   String
+   createdAt  DateTime  @default(now())
+   updatedAt  DateTime  @updatedAt
+
+  @@index([storeId])
 }
